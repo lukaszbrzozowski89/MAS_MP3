@@ -1,9 +1,13 @@
-public class Striker extends FootballPlayer {
+/*
+ * Copyright (c) Łukasz Brzozowski s17174 @ PJATK
+ */
+
+public class Striker extends Player {
     private int goals;
     private int assists;
 
-    public Striker(String name, String surname, int goals, int assists) {
-        super(name, surname);
+    public Striker(String name, String surname, String team, int goals, int assists) {
+        super(name, surname, team);
         this.goals = goals;
         this.assists = assists;
     }
@@ -20,22 +24,17 @@ public class Striker extends FootballPlayer {
 
     @Override
     public void pass() {
-        System.out.println(this + "pass ball");
-    }
-
-    @Override
-    public void kick() {
-        System.out.println(this + "kick ball");
+        System.out.println(this + "podal piłkę");
     }
 
     @Override
     public void shoot() {
-        System.out.println(this + "shoot ball");
+        System.out.println(this + "oddał strzał");
     }
 
     @Override
     public void throwBall() {
-        System.out.println(this + "throw ball");
+        System.out.println(this + "rzucił piłkę");
     }
 
     public int getGoals() {
@@ -46,4 +45,8 @@ public class Striker extends FootballPlayer {
         return assists;
     }
 
+    @Override
+    public double getSalary() {
+        return 0;
+    }
 }
